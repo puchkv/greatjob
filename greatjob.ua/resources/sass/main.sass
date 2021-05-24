@@ -1,0 +1,548 @@
+@import "fonts"
+@import "variables"
+
+@import "slider"
+@import "header"
+@import "footer"
+@import "progress_bar"
+@import "modal_window"
+
+@import "signup_page"
+@import "personal_page"
+@import "task_page"
+@import "task_list_page"
+@import "performers"
+@import "create_task"
+@import "autorization"
+
+*
+	box-sizing: border-box
+	font-family: Open Sans Regular, sans-serif
+
+html, body 
+	height: 100%
+	background: url("../images/background.png") fixed
+	background-size: cover
+	margin: 0
+	padding: 0
+
+body
+	display: flex
+	flex-direction: column
+
+a
+	text-decoration: none
+	color: $title-font-color
+
+button
+	padding: 20px 40px
+	font-family: Avenir Demi, sans-serif
+	cursor: pointer
+	font-size: 14px
+	color: #fff
+	border: none
+	border-radius: 3px
+	background: $button-color
+	transition: all .2s ease-in-out
+	&:hover
+		background: $button-hover-color
+
+ul
+	list-style: none
+
+section
+	width: 1024px
+	z-index: 3
+	padding-top: 60px
+	flex: 1 0 auto
+	margin: 0 auto
+	background: #fff  
+	box-shadow: 0 0 60px rgba(0,0,0,0.3)
+
+
+@media screen and (max-width: 1024px)
+	section
+		padding: 0
+		width: 100%
+
+.title
+	display: block
+	font-size: 26px
+	margin: 20px
+
+.profile__picture
+	background: #fff
+	width: $profilePictureDefaultSize
+	height: $profilePictureDefaultSize
+	border-radius: 100%
+	padding: 0
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	overflow: hidden
+
+	img
+		max-width: 100%
+		height: 100%
+		object-fit: cover
+		display: block
+
+	&.small
+		width: $profilePictureSmallSize
+		height: $profilePictureSmallSize
+
+	&.big
+		width: $profilePictureBigSize
+		height: $profilePictureBigSize
+
+.spacer
+	flex: 1 1 10px
+	position: relative
+	display: block
+	height: 10px
+	overflow: hidden
+	align-self: flex-end
+
+	&:before
+		content: ''
+		position: absolute
+		right: 5px
+		left: 5px
+		bottom: 5px
+		border-bottom: 1px dashed #c5c5c5
+
+.nav__arrow
+	display: inline-block
+	position: relative
+	width: $arrowDefaultSize
+	height: $arrowDefaultSize
+
+	&.small
+		width: $arrowSmallSize
+		height: $arrowSmallSize
+	&.big
+		width: $arrowBigSize
+		height: $arrowBigSize
+
+	&.right
+		transform: rotate(45deg)
+
+	&.left
+		transform: rotate(-135deg)
+
+	&:after
+		position: absolute
+		content: ""
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+
+		border-width: 4px 4px 0 0
+		border-radius: 2px
+		border-style: solid
+		border-color: $title-font-color
+
+.custom__form
+	div
+		padding: 16px
+
+		label
+			display: block
+			color: #777
+		select	
+			option
+				line-height: 20px
+				background: #f3f3f3
+
+		input[type=text], input[type=email],
+		input[type=tel], input[type=password],
+		input[type=number], input[type=date], 
+		select, textarea
+			width: 100%
+			outline: 0
+			border-radius: 4px
+			padding: 15px
+			background: #f3f3f3
+			font-size: 16px
+			margin-top: 10px
+			border: 1px solid #e0e0e0
+
+			&:focus
+				background: #fff
+				border: 1px solid $title-font-color
+
+		input[type=submit], input[type=button]
+			@extend button
+
+		textarea
+			resize: vertical
+			min-height: 150px
+			transition: none
+
+.categories
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		overflow: hidden
+		padding: 25px
+
+		div
+			display: flex
+			flex-direction: column
+			width: 33%
+			padding: 10px
+
+			span
+				padding-bottom: 12px
+				a
+					font-size: 18px
+					font-family: Open Sans Semibold, sans-serif
+					color: $title-font-color
+
+				span
+					font-size: 12px
+					padding-left: 8px
+					color: #999
+
+			ul
+				padding-left: 20px
+				margin: 0
+				list-style: none
+
+				li
+					display: block
+					padding: 6px 0
+
+					a
+						color: $primary-font-color
+
+					span
+						color: #999
+						font-size: 12px
+						padding-left: 8px
+
+@media screen and (max-width: 600px)
+	.categories
+		&__wrap
+			div
+				width: 100%
+
+
+.tasks
+	background: #f2f2f2
+	&__title
+		text-align: center
+		display: block
+		padding: 25px
+		font-size: 24px
+		color: #444
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		padding: 0 30px 30px 30px
+
+		.task
+			width: 32%
+			height: auto
+			flex-direction: column
+			overflow: hidden
+			background: #fff
+			padding: 16px
+			border-radius: 6px
+			box-shadow: 0 0 10px rgba(0,0,0,0.2)
+			margin-bottom: 20px
+		
+			&__header
+				display: flex
+				align-items: center
+				height: 80px
+
+				&__username
+					padding-left: 10px
+					font-family: Open Sans Semibold, sans-serif
+					color: $title-font-color
+
+				&__date
+					margin-left: auto
+					font-size: 14px
+					color: #777
+
+			&__content
+				max-height: 210px
+				word-wrap: break-word
+				&__header
+					display: flex
+					align-items: center
+
+					a
+						font-size: 18px
+						font-family: Open Sans Semibold, sans-serif
+						color: #000
+					.cost
+						margin-left: auto
+						background: rgb(253, 184, 19)
+						padding: 5px 14px
+						border-radius: 5px
+						color: #000
+				&__text
+					font-size: 15px
+					color: $primary-font-color
+					padding: 10px 0
+					margin: 0
+					overflow: hidden
+
+@media screen and (max-width: 1024px)
+	.tasks
+		&__wrap
+			.task
+				width: 100%
+				height: auto
+				word-wrap: break-word
+
+@media screen and (max-width: 400px)
+	.tasks
+		&__wrap
+			padding: 0
+			.task
+				padding: 20px 10px
+				border-radius: 0
+				margin: 0
+				box-shadow: none
+				border-bottom: 1px solid #f0f0f0
+				&__header
+					height: auto
+					&__date
+						font-size: 12px
+					&__username
+						font-size: 14px
+						justify-self: flex-start
+
+
+.counters
+	&__wrapper
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		overflow: hidden
+		background: #0080FF
+		padding: 0
+		margin: 0
+
+		div 
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-flow: column wrap
+			width: 50%
+			height: 200px
+
+			span
+				font-family: Avenir Light, sans-serif
+				color: #fff
+				font-size: 72px
+				letter-spacing: 15px
+
+			p
+				color: #fff
+				padding: 0
+				margin: 0
+				font-size: 20px
+				
+@media screen and (max-width: 600px)
+	.counters
+		&__wrapper
+			div
+				width: 100%
+
+
+.w100
+	width: 100%
+.w75
+	width: 75%
+.w50
+	width: 50%
+.w25
+	width: 25%
+
+
+@media screen and (max-width: 600px)
+	.w75, .w50, .w25
+		width: 100%
+
+.light-red
+	background: #fd98ad
+.red
+	background: #e64c4c
+	&:hover
+		background: #bf3232
+.done
+	background: #00A92D
+	&:hover
+		background: #00761f
+
+.alert
+	padding: 20px
+	border-radius: 4px
+
+	ul
+		padding: 0
+		margin: 0
+
+	&.danger
+		border: 1px solid #e64c4c
+		background: #fd98ad
+
+.checkbox__container
+	display: block
+	position: relative
+	cursor: pointer
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	padding-left: 35px
+	margin: 10px 0 10px 0
+
+	.checkmark
+		&:after
+			left: 9px
+			top: 5px
+			width: 5px
+			height: 10px
+			border: solid white
+			border-width: 0 3px 3px 0
+			-webkit-transform: rotate(45deg)
+			-ms-transform: rotate(45deg)
+			transform: rotate(45deg)
+
+	input
+		display: none
+
+		&:hover ~ .checkmark
+			background: #ccc
+
+		&:checked ~ .checkmark
+			background: $title-font-color
+			&:after
+				display: block
+
+.checkmark
+	position: absolute
+	top: 0
+	left: 0
+	height: 25px
+	border-radius: 5px
+	width: 25px
+	background: #eee
+	-webkit-transition: .2s
+	transition: .2s
+
+	&:after
+		content: ''
+		position: absolute
+		display: none
+
+.wrap
+	width: 100%
+	height: 100%
+	&.flex
+		display: flex
+	&.center
+		justify-content: center
+
+.block
+	padding: 20px
+	p
+		text-indent: 20px
+		color: #777
+		line-height: 2em
+
+.user__about
+	word-break: break-all
+
+
+.task__panel
+	display: flex
+	flex-direction: column
+	background: #f0f0f0
+
+	&__row
+		display: flex
+		flex-flow: row wrap
+		padding: 20px
+
+		&.center
+			justify-content: center
+
+		.label
+			min-width: 150px
+
+		&.white
+			background: white
+			border-top: 1px solid #e0e0e0
+			border-bottom: 1px solid #e0e0e0
+
+		.performer_info
+			display: flex
+			flex-flow: column wrap
+			align-items: center
+			justify-content: center
+			min-width: 120px
+			a, button
+				margin-top: 10px
+
+
+		.arrow-left
+			position: relative
+			width: 0 
+			height: 0 
+			border-top: 20px solid transparent
+			border-bottom: 20px solid transparent
+			border-right: 20px solid white
+			align-self: center
+
+		.offer_content
+			display: flex
+			padding: 20px
+			border-radius: 4px
+			background: #fff
+			flex: 1 1 70%
+			.left
+				display: flex
+				flex-flow: column wrap
+				justify-content: center
+				span
+					justify-self: flex-end
+					margin-top: 20px
+					color: #777
+					font-size: 14px
+			.right
+				display: flex
+				flex: 1 1 200px
+				margin-left: auto
+				justify-content: center
+				align-items: center
+				flex-flow: column wrap
+
+				button
+					margin: 5px
+
+
+@media screen and (max-width: 600px)
+	.task__panel
+		&__row
+			justify-content: center
+			.offer_content
+				flex-direction: column
+				.right
+					margin: 0
+					flex: 1 1 80px
+					button
+						width: 100%
+			.arrow-left
+				display: none
+			.performer_info
+				margin-bottom: 10px

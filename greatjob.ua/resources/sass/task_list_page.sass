@@ -1,0 +1,130 @@
+
+.task__list
+	&__dir
+		display: block
+		padding: 30px
+		text-align: center
+		background: #f0f0f0
+		position: relative
+
+		.subcategories
+			display: block
+			margin-top: 20px
+			a
+				display: inline-block
+				padding: 4px 10px
+				background: #fff
+				color: #777
+				border: 1px solid #c0c0c0
+				border-radius: 5px
+				margin-top: 5px
+				transition: .2s
+
+				&:hover
+					background: $title-font-color
+					color: #fff
+
+		span
+			font-size: 30px
+
+			a
+				margin: 0 20px
+				color: #000
+
+		.nav__arrow
+			&:last-of-type
+				display: none
+
+		h3
+			margin: 0
+			font-weight: normal
+			padding-top: 30px
+			font-size: 16px
+
+
+	.task
+		display: flex
+		flex-flow: row wrap
+		padding: 20px
+		width: 90%
+		justify-content: center
+		align-items: stretch
+		margin: auto
+		position: relative
+		border-bottom: 1px dashed #d0d0d0
+
+		&:last-child
+			border: 0
+
+
+		.task__owner
+			text-align: center
+			font-size: 14px
+			flex: 0 0 150px
+
+			div
+				margin: 0 auto
+			span
+				display: block
+				margin: 20px 0
+		
+
+		&__content
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			padding: 0 20px
+			flex: 1 1 40%
+
+			.task__title
+				display: block
+				font-size: 18px
+
+			p
+				font-size: 14px
+				overflow: hidden
+				text-overflow: ellipsis
+				line-height: 1.5em
+				max-height: 1.5em * 3
+				color: #999
+
+			.task__date
+				margin-bottom: 20px
+				font-size: 12px
+				color: #999
+
+		&__sidebar
+			width: 20%
+			.task__cost
+				display: block
+				padding: 13px
+				font-size: 24px
+				text-align: center
+				font-family: Open Sans Semibold, sans-serif
+
+			button
+				width: 100%
+				padding: 20px 10px
+
+			
+@media screen and (max-width: 700px)
+	.task__list
+		&__dir
+			span
+				font-size: 22px
+
+				&:after
+					width: 15px
+					height: 15px
+
+		.task
+			width: 100%
+
+@media screen and (max-width: 500px)
+	.task__list
+		.task
+			&__content
+				flex: 1 0 70%
+			&__sidebar
+				width: 100%
+					

@@ -1,0 +1,473 @@
+
+section
+	.content
+		&__header
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+			padding: 30px
+			background: #f9f9f9
+
+			.user__profile
+				padding-left: 20px
+
+				&__role
+					display: block
+					margin-bottom: 5px
+					color: #999
+
+				&__change
+					display: inline-block
+					width: 20px
+					height: 20px
+					margin-left: 4px
+					background: url("../images/icons/change-icon.png")
+					background-size: cover
+
+				&__name
+					span
+						display: inline-block
+						font-family: Open Sans Semibold, sans-serif
+						font-size: 24px
+						color: $title-font-color
+
+					.user__profile__verified
+						display: inline-block
+						width: 25px
+						height: 25px
+						position: relative
+						margin-left: 2px
+						
+						.mark
+							&:after
+								left: 9px
+								top: 5px
+								width: 5px
+								height: 10px
+								border: solid white
+								border-width: 0 3px 3px 0
+								-webkit-transform: rotate(45deg)
+								-ms-transform: rotate(45deg)
+								transform: rotate(45deg)
+
+				&__city
+					display: block
+					color: $primary-font-color
+					font-size: 18px
+					padding: 10px 0
+					border-top: 1px solid #e0e0e0
+
+			.user__counters
+				display: inline-block
+				margin-left: auto
+				padding: 10px 25px 10px 25px
+				div
+					display: block
+					float: left
+					text-align: center
+
+					&:nth-of-type(2)
+						padding-left: 30px
+
+					span
+						display: block
+						color: $primary-font-color
+
+					span:nth-of-type(1)
+						font-family: Open Sans Semibold, sans-serif
+						
+						font-size: 32px
+
+		&__info
+			display: flex
+			flex-flow: row wrap
+
+			&__left
+				font-size: 1em
+				padding: 10px
+				width: 70%
+
+				.title
+					display: block
+					font-size: 22px
+					text-align: center
+					font-family: Open Sans, sans-serif
+					margin: 16px 0 20px 0px
+					color: #000
+
+					&:after
+						content: ''
+						display: block
+						width: 150px
+						margin: 12px auto 0
+						height: 1px
+						background: $title-font-color
+				p
+					color: $primary-font-color
+
+				.user__tasks
+					padding: 0
+					li
+						display: block
+						border-bottom: 1px solid #f0f0f0
+						padding: 20px 10px
+						a, span
+							display: inline-block
+							
+					&__date
+						float: right
+						font-size: 12px
+						color: #777
+
+
+				.user__pricelist
+					ul
+						margin: 0
+						padding: 0
+						list-style: none
+
+						li
+							display: block
+							padding: 7px 0 7px 0px
+
+							.price__line
+								display: flex
+	
+								a
+									float: left
+									color: $primary-font-color
+
+									&:hover
+										color: $title-font-color
+								span
+									float: right
+									
+									font-family: Open Sans Semibold, sans-serif
+									color: $primary-font-color
+
+				.user__examples
+					display: flex
+					flex-flow: row wrap
+
+						
+								
+							
+						/*	
+								&:hover ~ span
+									opacity: 1
+
+							span
+								position: absolute
+								top: 0
+								left: 0
+								right: 0
+								bottom: 0
+								opacity: 0
+								background: rgba(0,0,0,0.8)
+								cursor: pointer
+								text-align: center
+								transition: .6s ease
+								z-index: 1
+
+								&:before
+									content: ''
+									height: 100%
+									display: inline-block
+									vertical-align: middle
+
+								&:after
+									content: "\2315"
+									font-size: 60px
+									color: #fff
+									line-height: 100%
+									vertical-align: middle */
+				.user__reviews
+					list-style: none
+					padding: 0
+
+					.review__row
+						padding-top: 18px
+						padding-bottom: 18px
+						display: flex
+						align-items: center
+						justify-content: center
+						flex-flow: row wrap
+						border-bottom: 1px solid #f0f0f0
+
+						&:last-child
+							border: 0
+
+						.reviewer__info
+							flex: 0 0 150px
+							text-align: center
+							align-self: flex-start
+							
+							.profile__picture
+								margin: auto
+
+							.reviewer__name
+								margin-top: 10px
+								display: block
+								
+							.reviewer__role
+								display: block
+								font-size: 12px 
+								color: #777
+
+						.review__content
+							flex: 1 1 250px
+							span
+								display: block
+								margin-bottom: 15px
+							.review__task, .review__date, .review__grade
+								font-size: 14px
+								color: #999
+
+							.review__message
+								font-size: 14px
+								line-height: 1.7em
+
+							.review__rating
+								list-style: none
+								display: block
+								padding: 0
+								li
+									display: inline-block
+									line-height: 25px
+
+									&:before
+										content: "\2605"
+										font-size: 26px
+										border-radius: 10px
+
+						.review__grades
+							flex: 0 0 240px
+							padding: 10px
+							align-self: flex-start
+							background: #f0f0f0
+							border: 1px solid #e0e0e0
+							border-radius: 4px
+							margin: 10px
+
+			&__right
+				display: flex
+				flex-flow: column wrap
+				align-items: center
+				width: 30%
+				padding: 10px
+
+				.user__progress
+					padding: 16px
+					text-align: center
+
+					div
+						margin-bottom: 10px
+
+					.progress
+						margin: 0 auto 20px
+
+					.user__rating
+						display: block
+						margin-bottom: 10px
+						color: $primary-font-color
+						font-size: 24px
+
+					.user__reviews
+						font-size: 16px
+						color: #b0b0b0
+
+					button
+						margin: 10px
+
+						&:last-child
+							background: #329932
+							
+							&:hover
+								background: #008000
+
+
+.grade
+	font-family: Open Sans Semibold, sans-serif
+	font-size: 16px
+
+	&.green
+		color: #008000
+	&.red
+		color: #990000
+	&.yellow
+		color: #daa520				
+
+.mark
+	position: absolute
+	top: 0
+	left: 0
+	border-radius: 50%
+	background: $title-font-color
+	-webkit-transition: .2s
+	transition: .2s
+	width: 25px
+	height: 25px
+
+	&:after
+		content: ''
+		position: absolute
+									
+@media screen and (max-width: 1024px)
+	section
+		.content
+			&__header
+				padding: 10px
+				.user__counters
+					padding: 0
+					div
+						padding: 0
+					
+			&__info__right
+				order: -1
+				width: 100%
+				justify-content: center
+				flex-flow: row wrap
+				background: #f5f5f5
+
+				
+
+			&__info__left
+				width: 100%
+
+				.user__examples
+					&__row
+						margin-bottom: 5px
+
+						div
+							margin-right: 5px
+				
+
+@media screen and (max-width: 700px)
+	section
+		.content
+			&__header
+				justify-content: center
+				.user__counters
+					margin: 0 auto
+			&__info__right
+					.user__progress
+						text-align: center
+
+@media screen and (max-width: 400px)
+	section
+		.content
+			&__header
+					font-size: 14px
+			&__info__left
+				.user__reviews
+					.review__row
+						flex-wrap: wrap
+						justify-content: center
+
+						.review__content
+							width: 100%
+						.reviewer__info
+							margin-bottom: 10px
+
+
+.pagination_container
+	display: flex
+	width: 100%
+	flex-flow: row wrap
+	justify-content: center
+	align-items: center
+	margin: 20px 5px
+
+	.pagination
+		list-style: none
+		padding: 0
+		margin: 0
+		display: block
+		font-size: 0
+		border-style: solid 
+		border-color: #c0c0c0
+		border-width: 1px
+		border-radius: 4px
+
+		.page-item
+			display: inline-block
+			font-size: 0
+			border-style: solid 
+			border-color: #c0c0c0
+			border-width:  0 1px 0px 0
+			&:last-child
+				border-width: 0
+
+			&.active
+				background: $title-font-color
+				.page-link
+					color: white
+					&:hover
+						background: #0050ff
+		
+			.page-link
+				display: block
+				padding: 10px 20px
+				font-size: 14px
+
+				&:hover
+					background: #f0f0f0
+
+.square
+	float: left
+	position: relative
+	width: 31%
+	padding-bottom: 31% 
+	margin: 1%
+	cursor: pointer
+
+	.overlay
+		position: absolute
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		background: rgba(0,0,0,0.9)
+		opacity: 0
+		transition: .2s
+
+		img
+			width: 30px
+			height: 30px
+
+.example
+	&:hover > .overlay
+		opacity: 1
+
+.rating__star
+	display: inline-block
+	width: 18px
+	height: 18px
+	background-image: url('../images/icons/star.png')
+	background-position: center center
+	background-size: cover
+	vertical-align: baseline
+
+	&.active
+		background-image: url('../images/icons/star-active.png')
+
+.grades
+	&__title
+		display: inline-block
+		min-width: 80px
+		font-size: 14px
+		color: #999
+		vertical-align: baseline
+
+.view-more
+	background: #e0e0e0
+	margin: 0 auto
+	border: 1px solid #c0c0c0
+	color: #444
+
+
+
+

@@ -1,0 +1,36 @@
+.create__task__container
+	padding: 30px
+	width: 70%
+
+	.create__task__form
+		&__row
+			display: block
+
+			select
+				width: 50%
+				display: block
+
+			.task__cost
+				width: 100px
+
+				& + label
+					display: inline-block
+
+		button
+			width: 100%
+			padding: 20px
+
+		&__about
+			.title
+				padding: 0
+				margin: 0
+
+@media screen and (max-width: 700px)
+	.create__task__container
+		padding: 10px
+		width: 100%
+
+		.create__task__form
+			&__row
+				input, select
+					width: 100%

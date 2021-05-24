@@ -1,0 +1,294 @@
+@font-face {
+  font-family: "SFNS Display";
+  src: url("fonts/Display/sfns_display.eot?") format("eot"), url("fonts/Display/sfns_display.woff2") format("woff2"), url("fonts/Display/sfns_display.woff") format("woff"), url("fonts/Display/sfns_display.ttf") format("truetype"), url("fonts/Display/sfns_display.svg#SFNS_Display") format("svg");
+}
+
+@font-face {
+  font-family: "SFNS Thin";
+  src: url("fonts/Thin/sfns_display_thin.eot?") format("eot"), url("fonts/Thin/sfns_display_thin.woff2") format("woff2"), url("fonts/Thin/sfns_display_thin.woff") format("woff"), url("fonts/Thin/sfns_display_thin.ttf") format("truetype"), url("fonts/Thin/sfns_display_thin.svg#SFNS_Thin") format("svg");
+}
+
+@font-face {
+  font-family: "SFNS Bold";
+  src: url("fonts/Bold/sfns_display_bold.eot?") format("eot"), url("fonts/Bold/sfns_display_bold.woff2") format("woff2"), url("fonts/Bold/sfns_display_bold.woff") format("woff"), url("fonts/Bold/sfns_display_bold.ttf") format("truetype"), url("fonts/Bold/sfns_display_bold.svg#SFNS_Bold") format("svg");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("fonts/PT Sans/ptsans.eot?") format("eot"), url("fonts/PT Sans/ptsans.woff2") format("woff2"), url("fonts/PT Sans/ptsans.woff") format("woff"), url("fonts/PT Sans/ptsans.ttf") format("truetype"), url("fonts/PT Sans/ptsans.svg#PT_Sans") format("svg");
+}
+
+@font-face {
+  font-family: "PT Sans Bold";
+  src: url("fonts/PT Sans/ptsansbold.eot?") format("eot"), url("fonts/PT Sans/ptsansbold.woff2") format("woff2"), url("fonts/PT Sans/ptsansbold.woff") format("woff"), url("fonts/PT Sans/ptsansbold.ttf") format("truetype"), url("fonts/PT Sans/ptsansbold.svg#PT_Sans_Bold") format("svg");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #0099E3;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #999;
+  background: #1f1f1f;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+.admin_panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin_panel_left_sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  width: 250px;
+  min-height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: #191919;
+  border-right: 1px solid #151515;
+}
+
+.admin_panel_left_sidebar .hamburger {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: none;
+}
+
+.admin_panel_left_sidebar ul {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.admin_panel_left_sidebar ul li a {
+  display: block;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  -webkit-text-decoration: uppercase;
+          text-decoration: uppercase;
+  padding: 20px;
+  color: #777;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.admin_panel_left_sidebar ul li a span {
+  vertical-align: middle;
+}
+
+.admin_panel_left_sidebar ul li a:hover {
+  background: #171717;
+  color: #e0e0e0;
+}
+
+.admin_panel_content {
+  padding: 20px 30px;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  height: 100%;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
+  color: #c8c8c8;
+  margin-bottom: 20px;
+}
+
+.text-red {
+  color: #c90d0d;
+}
+
+.text-green {
+  color: #13c90d;
+}
+
+.text-white {
+  color: white;
+}
+
+.var {
+  color: #CE2547;
+}
+
+.red {
+  background: #c90343;
+}
+
+.green {
+  background: #13c90d;
+}
+
+.dark {
+  background: #191919;
+}
+
+.light-dark {
+  background: #272727;
+}
+
+.grey {
+  background: #5e5e5e;
+}
+
+.white {
+  background: #f0f0f0;
+}
+
+.table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #151515;
+}
+
+.table .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.table .row .spacer {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-bottom: 1px dotted #444;
+}
+
+.w25 {
+  width: 25%;
+}
+
+.w30 {
+  width: 30%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.w100 {
+  width: calc(100% - 70px);
+}
+
+@media screen and (max-width: 768px) {
+  .admin_panel {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .w25, .w30, .w50, .w75 {
+    width: 100%;
+  }
+}
+
+.button {
+  margin: 20px 0;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-size: 1rem;
+  background: #0c385e;
+  color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+  background: #092a47;
+  color: #fff;
+}
+
+.hamburger-inner {
+  background: #ffffff;
+}
+
+.hamburger-inner:before, .hamburger-inner:after {
+  background: #fff;
+}
+
+.hamburger.is-active .hamburger-inner {
+  background: #ffffff;
+}
+
+.hamburger.is-active .hamburger-inner:after {
+  background: #fff;
+}
+
+table {
+  background: #191919;
+  border-radius: 12px;
+  border-collapse: collapse;
+}
+
+table th {
+  background: #101010;
+  height: 50px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #00725c;
+}
+
+table td {
+  height: 50px;
+  vertical-align: middle;
+  min-width: 50px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+table td a {
+  font-weight: 700;
+}
+
+.times {
+  font-size: 36px;
+}
+/*# sourceMappingURL=admin.css.map */

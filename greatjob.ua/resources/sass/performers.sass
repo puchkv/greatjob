@@ -1,0 +1,106 @@
+.performers
+	display: flex
+
+	&__sort
+		width: 30%
+		background: #fff
+		border-left: 1px solid #e0e0e0
+		a
+			display: block
+			padding: 20px
+			color: #777
+			position: relative
+			border-bottom: 1px solid #e0e0e0
+			transition: .2s ease-in-out
+
+			&:hover
+				background: $title-font-color
+				color: #fff
+
+			&:active
+				color: $title-font-color
+
+
+	&__list
+		flex-grow: 1
+		.performer
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			padding: 20px
+			position: relative
+
+			&:after
+				content: ""
+				position: absolute
+				bottom: 0
+				left: 20px
+				width: calc(100% - 40px)
+				height: 1px
+				background: #e0e0e0
+
+			&__tag
+				position: absolute
+				top: 20px
+				left: 0
+				min-width: 30px
+				font-size: 14px
+				text-align: center
+				border-radius: 0 2px 2px 0
+				background: $title-font-color
+				color: #fff
+
+			&__info
+				margin-left: 20px
+
+				span
+					display: block
+					font-size: 14px
+					color: #777
+
+					a
+						font-size: 18px
+
+			&__details
+				margin-left: auto
+				text-align: center
+				width: 30%
+				.progress
+					margin: 0 auto
+
+				.performer__rating
+					font-size: 14px
+					color: #777
+					margin: 10px 0
+
+@media screen and (max-width: 1024px)
+	.performers
+		flex-direction: column
+		&__sort
+			order: 1
+			width: 100%
+		&__list
+			order: 2
+
+@media screen and (max-width: 700px)
+	.performers
+		.performers__list
+			.performer
+				justify-content: center
+				&__details
+					margin-top: 10px 
+					margin-left: 0
+					width: 100%
+
+@media screen and (max-width: 400px)
+	.performers
+		.performers__list
+			.performer
+				&__info
+					margin-left: 10px
+
+@media screen and (max-width: 320px)
+	.performers
+		.performers__list
+			.performer
+				text-align: center

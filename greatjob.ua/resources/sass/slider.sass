@@ -1,0 +1,142 @@
+$slidesCount: 2
+$sliderWidth: 100%
+$sliderHeight: 400px
+$sliderTransition: .5s
+$sliderIndicatorSize: 14px
+
+.slider
+	height: $sliderHeight
+	width: $sliderWidth
+	overflow: hidden
+	
+	position: relative
+	padding: 0
+
+	&__track
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		padding: 0
+		margin: 0
+		transition: transform $sliderTransition ease 0s
+
+
+		.slider__slide
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			top: 0
+			left: 0
+			right: 0
+			opacity: 1
+			@for $i from 1 through $slidesCount
+				&:nth-of-type(#{$i})
+					transform: translateX(($i - 1) * 100%)
+
+	&__slide
+		height: 100%
+		position: absolute
+		overflow-y: auto
+		opacity: 0
+
+	&__control
+		display: none
+
+	&__indicators
+		position: absolute
+		bottom: 20px
+		width: 100%
+		text-align: center
+
+	&__indicator
+		height: $sliderIndicatorSize
+		width: $sliderIndicatorSize
+		border-radius: 100%
+		display: inline-block
+		z-index: 999
+		cursor: pointer
+		opacity: .35
+		margin: 0 2.5px 0 2.5px
+
+		&:hover
+			opacity: .75
+
+	@for $num from 1 through $slidesCount
+		&__control:nth-of-type(#{$num})
+			&:checked ~ .slider__track
+				transform: translateX(-(($num - 1) * 100%))
+			&:checked ~ .slider__slide:nth-of-type(#{$num})
+				transition: opacity $sliderTransition, transform $sliderTransition
+				top: 0
+				left: 0
+				right: 0
+				opacity: 1
+				transform: scale(1)
+			&:checked ~ .slider__indicators .slider__indicator:nth-of-type(#{$num})
+				opacity: 1
+
+.slider__indicator
+	background: #fafafa
+
+
+@for $num from 1 through $slidesCount
+	.slider__slide:nth-of-type(#{$num})
+		background: url('../images/slider/slide-' + $num + '.jpg')
+		background-size: cover
+		background-position: center
+   		
+.slider__slide
+
+	&:after
+		content: ' '
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		height: 100%
+		width: 100%
+		background: #000
+		opacity: .6
+
+	&__content
+		position: relative
+		padding: 25px
+		z-index: 3
+		width: 80%
+
+		span
+			font-size: 30px
+			color: rgb(253, 184, 19)
+			font-family: Avenir Demi, sans-serif
+			text-shadow: 2px 2px 3px rgba(0,0,0,.7)
+
+		p
+			font-size: 16px
+			color: #fff
+			text-shadow: 2px 2px 3px rgba(0,0,0,.7)
+
+
+@media screen and (max-width: 600px)
+	.slider
+		text-align: center
+		&__slide
+			&__content
+				height: $sliderHeight - 100px
+				margin: 0 auto
+				padding: 5px
+				overflow: hidden
+				text-overflow: ellipsis
+
+				span
+					max-height: 100px
+					overflow: hidden
+					font-size: 24px
+					
+				p
+					max-height: 100px
+					font-size: 14px
+					overflow: hidden
+					

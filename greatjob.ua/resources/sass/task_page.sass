@@ -1,0 +1,173 @@
+
+.task__page
+	display: flex
+	width: 100%
+	flex-flow: column wrap
+
+	&__header
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		align-items: center
+		padding: 30px
+		width: 100%
+
+		&__title
+			display: inline-block
+			margin-bottom: 10px
+			font-size: 28px
+			
+			button
+				margin: 0 auto
+				margin-top: 10px
+
+
+			span
+				font-size: 14px
+				color: #777
+
+		.task__page__cost__info
+			display: inline-block
+			float: right
+			text-align: center
+
+			.task__page__cost
+				display: block
+				font-size: 24px
+				border-radius: 6px
+				padding: 14px 25px
+				background: $second-primary-color
+				margin-bottom: 7px
+
+			.task__page__cost__additional
+				display: block
+				color: #777
+
+	&__info
+		display: flex
+		flex-wrap: wrap
+		padding: 30px
+		font-size: 18px
+		background: #f9f9f9
+		width: 100%
+
+		ul
+			list-style: 0
+			margin: 0
+			padding: 0
+			width: 100%
+			margin: 0 auto
+
+			li
+				display: block
+				padding: 7px 0
+
+				.task__page__info__row
+					display: flex
+
+					.label
+						display: block
+						float: left
+						color: #777
+
+					.var
+						display: block
+						float: right
+
+	&__details
+		display: flex
+		flex-wrap: wrap
+		padding: 30px
+		font-size: 18px
+		flex-direction: column
+		width: 100%
+
+		.title
+			font-size: 28px
+			padding-bottom: 10px
+			display: block
+
+		&__row
+			display: block
+			margin-bottom: 20px
+
+
+			.label
+				display: block
+				padding: 10px 0
+				color: $title-font-color
+				font-size: 18px
+
+			.var	
+				display: inline-block
+				color: #777
+				font-size: 15px
+				padding-left: 20px
+
+				span
+					color: #000
+
+	&__performer
+		padding: 30px 20px
+		background: rgba(0,153,18, 0.1)
+		border-top: 1px solid rgba(0,153,0, 0.1)
+		width: 100%
+
+		.title
+			font-size: 28px
+			padding-bottom: 20px
+			display: block
+			text-align: center
+			margin: 0
+
+		.performer__info
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: center
+
+
+			.performer__details
+				display: flex
+				flex-direction: column
+				flex-grow: 1
+				padding: 0 30px
+				
+				.performer__name
+					font-size: 24px
+
+				.performer__city
+					color: #777
+					margin-bottom: 10px
+
+				.label
+					font-size: 14px
+
+			.performer__grade
+				padding: 10px
+				span
+					display: block
+					span
+						display: inline-block
+
+
+
+@media screen and (max-width: 700px)
+	.task__page
+		&__header
+			justify-content: center
+			text-align: center
+
+		&__performer
+			.performer__info
+				justify-content: center
+				text-align: center
+
+				.performer__details
+					flex-grow: 0
+
+@media screen and (max-width: 400px)
+	.task__page
+		&__info
+			font-size: 14px
+

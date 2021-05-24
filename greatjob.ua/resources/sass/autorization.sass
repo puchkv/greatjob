@@ -1,0 +1,75 @@
+.signin__wrapper
+	display: flex
+	align-items: stretch
+	min-height: 100%
+	.signin__container
+		display: flex
+		height: auto
+		justify-content: center
+		flex-flow: column wrap
+		width: 50%
+		padding: 10px
+
+		.signin__form
+			width: 100%
+
+			input[type=submit]
+				padding: 20px 0
+				margin: 0 auto
+
+			a
+				padding-left: 16px
+				font-size: 14px
+
+	.signup__container
+		display: flex
+		flex-flow: column wrap
+		justify-content: center
+		width: 50%
+		padding: 10px
+		background: #f0f0f0
+
+		.line
+			width: calc(100% - 60px)
+			height: 1px
+			background: #e0e0e0
+			margin: 0 auto
+			margin-top: 30px
+			margin-bottom: 30px
+
+		h3
+			text-decoration: none
+			font-weight: lighter
+			font-size: 32px
+			margin: 3px 30px
+			color: $title-font-color
+
+		span
+			margin: 0 30px
+			color: #777
+			font-size: 14px
+
+		button
+			width: 50%
+			padding: 20px 0
+			margin: 20px
+			background: transparent
+			color: $title-font-color
+			border: 1px solid $title-font-color
+
+			&:hover
+				background: $title-font-color
+				color: #fff
+
+
+@media screen and (max-width: 700px)
+	.signin__wrapper
+		flex-direction: column
+
+		.signup__container, .signin__container
+			justify-content: center
+			align-items: center
+			width: 100%
+
+			.signin__form
+				width: 100%

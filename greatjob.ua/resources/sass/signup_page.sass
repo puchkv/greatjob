@@ -1,0 +1,61 @@
+.signup__content
+	padding: 30px
+	background: #fff
+	.content__wrap
+		display: flex
+		flex-flow: column wrap
+		justify-content: center
+		align-items: flex-start
+		width: 500px
+
+		.signup__user__form
+			width: 100%
+
+		&__title
+			font-family: Open Sans Semibold, sans-serif
+			text-align: center
+			padding: 20px
+			font-size: 24px
+			color: $title-font-color
+
+.content__controls
+	display: none
+
+.content__controls:nth-of-type(1)
+	&:checked ~ .content__indicators .content__indicator:nth-of-type(1)
+		background: rgb(253, 184, 19)
+	&:checked ~ .signup__company__form:nth-of-type(2)
+		display: none
+
+
+.content__controls:nth-of-type(2)
+	&:checked ~ .content__indicators .content__indicator:nth-of-type(2)
+		background: rgb(253, 184, 19)
+	&:checked ~ .signup__user__form:nth-of-type(1)
+		display: none
+
+.content__indicators
+	display: flex
+	justify-content: space-around
+	width: 100%
+	padding: 16px
+
+.content__indicator
+	padding: 16px
+	cursor: pointer
+	width: 50%
+	text-align: center
+	border: 1px solid rgb(253, 184, 19)
+
+	&:first-child
+		border-radius: 5px 0 0 5px
+
+	&:last-child
+		border-radius: 0 5px 5px 0
+
+@media screen and (max-width: 700px)
+	.signup__content
+		.content__wrap
+			width: 100%
+
+
